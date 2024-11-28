@@ -16,9 +16,6 @@ This system was built using **Dash**, **Plotly**, and other Python libraries to 
 
 ---
 
-
----
-
 ## Setup Instructions
 
 ### Prerequisites
@@ -63,13 +60,34 @@ Ensure you have the following installed on your system:
 ---
 
 ## Dataset
-The project uses the `amazon.csv` dataset, which includes:
-- Product names
-- Categories
-- Ratings
-- Discount percentages
-- Prices (original and discounted)
-- Image links
+The project uses the **Amazon Sales Dataset** from Kaggle. This dataset includes details of 1K+ Amazon products, including their ratings, reviews, and other product-specific information.
+
+### Features
+- `product_id`: Unique ID for each product
+- `product_name`: Name of the product
+- `category`: Category of the product
+- `discounted_price`: Discounted price of the product
+- `actual_price`: Original price of the product
+- `discount_percentage`: Percentage of discount offered
+- `rating`: Product rating
+- `rating_count`: Number of users who rated the product
+- `about_product`: Description of the product
+
+### Usage
+If you'd like to use the same dataset, you can access it in two ways:
+
+1. **Download Manually**  
+   Visit the [Kaggle dataset page](https://www.kaggle.com/karkavelraja/amazon-sales-dataset), download the dataset as a ZIP file, and extract it to your local directory.
+
+2. **Using Kaggle API**  
+   To automate the process with the Kaggle API:
+   ```python
+   import kagglehub
+   
+   # Download the dataset
+   path = kagglehub.dataset_download("karkavelraja/amazon-sales-dataset")
+   print("Path to dataset files:", path)
+
 
 ---
 
