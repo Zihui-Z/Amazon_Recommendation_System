@@ -62,6 +62,22 @@ Ensure you have the following installed on your system:
 ## Dataset
 The project uses the **Amazon Sales Dataset** from Kaggle. This dataset includes details of 1K+ Amazon products, including their ratings, reviews, and other product-specific information.
 
+## Model
+This system utilizes **Hugging Face Transformers** for embedding generation and **cosine similarity** for matching user queries to relevant products. The recommendation algorithm considers:
+- **Rating weight**: A combination of product ratings and rating counts.
+- **Category diversity**: Ensuring recommendations are varied and balanced.
+
+The model is optimized for:
+- Matching user queries to the most relevant discounted products.
+- Selecting diverse and top-rated products from various categories.
+
+### Libraries and Frameworks
+- **Hugging Face Transformers**: NLP embeddings for product matching.
+- **NumPy**: Efficient numerical operations.
+- **scikit-learn**: Cosine similarity for matching embeddings.
+- **Dash**: Frontend framework for an interactive UI.
+
+---
 ### Features
 - `product_id`: Unique ID for each product
 - `product_name`: Name of the product
