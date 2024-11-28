@@ -77,7 +77,7 @@ The project uses the **Amazon Sales Dataset** from Kaggle. This dataset includes
 If you'd like to use the same dataset, you can access it in two ways:
 
 1. **Download Manually**  
-   Visit the [Kaggle dataset page](https://www.kaggle.com/karkavelraja/amazon-sales-dataset), download the dataset as a ZIP file, and extract it to your local directory.
+   Visit the [Kaggle dataset page](https://www.kaggle.com/datasets/karkavelrajaj/amazon-sales-dataset/data), download the dataset as a ZIP file, and extract it to your local directory.
 
 2. **Using Kaggle API**  
    To automate the process with the Kaggle API:
@@ -104,15 +104,6 @@ This project is licensed under the **AGPL-3.0 License**. See the [LICENSE](./LIC
 
 ---
 
-## Contributing
-Contributions are welcome! To contribute:
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Commit your changes (`git commit -m "Add feature"`).
-4. Push the branch (`git push origin feature-branch`).
-5. Open a pull request.
-
----
 
 ## Author
 Developed by **Zoe Zhuang**  
