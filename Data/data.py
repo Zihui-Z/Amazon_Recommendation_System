@@ -1,7 +1,7 @@
 import pandas as pd
 
 def load_data(file_path):
-    df = pd.read_csv('/Users/zoezhuang/Desktop/Dashboard/Data/amazon.csv')
+    df = pd.read_csv('/amazon.csv')
     # Clean and preprocess the data
     df['sub_category'] = df['category'].str.split('|').str[-1]
     df['main_category'] = df['category'].str.split('|').str[0]
