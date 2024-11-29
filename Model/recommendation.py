@@ -29,7 +29,7 @@ def match_discount_product(query, tokenizer, model, df):
     )
     query = generate_embedding(query, tokenizer, model)
     # Compute cosine similarity
-    embeddings = np.vstack(discounted_products['embedding'].to_numpy())  # Ensure consistent type
+    embeddings = np.vstack(discounted_products['embedding'].to_numpy())
     similarities = cosine_similarity([query], embeddings).flatten()
     # Find the best match
     best_match = np.argmax(similarities)
