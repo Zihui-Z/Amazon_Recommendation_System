@@ -1,7 +1,7 @@
 # 🛒 Amazon Recommendation System 🛍
 
 ## Overview
-The **Amazon Recommendation System** is a web-based application that delivers personalized product recommendations based on user input and product data. It integrates product categories, discounts, and pricing trends to enhance the shopping experience. The system is built using **Dash**, **Plotly**, and other Python libraries to provide an interactive and user-friendly interface.
+The **Amazon Recommendation System** is a web-based application that allows users to easily search for and explore discounted products. It leverages product data such as categories, ratings, and discounts, providing an interactive interface for browsing products and visualizing price trends. Users can search for specific keywords to find discounted items and analyze price drops through interactive charts. Recommendations are generated based on a rating weight metric (combining product ratings and rating counts) and ensuring diversity by selecting unique subcategories. The system is built using **Dash**, **Plotly**, and other Python libraries to provide an interactive and user-friendly interface.
 
 ---
 
