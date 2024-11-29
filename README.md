@@ -107,13 +107,12 @@ The system is built using the following tools:
 To use the model, ensure the following library is installed:
 ```bash
 pip install -U sentence-transformers
-
+---
 ## Technologies Used
 - **Dash**: For building the interactive web application
 - **Plotly**: For creating visualizations
 - **Pandas**: For data manipulation
 - **scikit-learn**: For recommendation algorithms
-
 ---
 
 ## License
