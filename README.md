@@ -63,31 +63,33 @@ Ensure you have the following installed on your system:
 The project uses the **Amazon Sales Dataset** from Kaggle. This dataset includes details of 1K+ Amazon products, including their ratings, reviews, and other product-specific information.
 
 ## Model
-This system utilizes **Hugging Face Transformers** for embedding generation and **cosine similarity** for matching user queries to relevant products. The recommendation algorithm considers:
-- **Rating weight**: A combination of product ratings and rating counts.
-- **Category diversity**: Ensuring recommendations are varied and balanced.
+This system leverages the **all-MiniLM-L6-v2** model from [Hugging Face](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2), a sentence-transformer model designed for semantic similarity tasks. The model maps sentences and paragraphs to a **384-dimensional dense vector space**, making it ideal for clustering, semantic search, and matching user queries to product names.
 
-The model is optimized for:
-- Matching user queries to the most relevant discounted products.
-- Selecting diverse and top-rated products from various categories.
+### Key Features of the Model:
+- **Efficient Embedding Generation**: Converts product names and user queries into meaningful embeddings.
+- **Lightweight and Fast**: With **22.7M parameters**, the model is optimized for speed and accuracy.
+- **Cosine Similarity**: Used to compute the relevance between user queries and product names.
 
-### Libraries and Frameworks
-- **Hugging Face Transformers**: NLP embeddings for product matching.
-- **NumPy**: Efficient numerical operations.
-- **scikit-learn**: Cosine similarity for matching embeddings.
-- **Dash**: Frontend framework for an interactive UI.
+### How the System Works:
+This system utilizes **Hugging Face Transformers** for embedding generation and **cosine similarity** for matching user queries to relevant products. The recommendation algorithm is designed with the following considerations:
+- **Rating Weight**: A combination of product ratings and rating counts to prioritize highly-rated and popular products.
+- **Category Diversity**: Ensures recommendations are varied and balanced across different product categories.
 
----
-### Features
-- `product_id`: Unique ID for each product
-- `product_name`: Name of the product
-- `category`: Category of the product
-- `discounted_price`: Discounted price of the product
-- `actual_price`: Original price of the product
-- `discount_percentage`: Percentage of discount offered
-- `rating`: Product rating
-- `rating_count`: Number of users who rated the product
-- `about_product`: Description of the product
+### Optimizations:
+- **Query Matching**: Matches user queries to the most relevant discounted products using embeddings and cosine similarity.
+- **Diverse Recommendations**: Selects top-rated products from various categories to provide a balanced set of recommendations.
+
+### Libraries and Frameworks:
+The system is built using the following tools:
+- **Hugging Face Transformers**: Provides state-of-the-art NLP embeddings for product matching.
+- **NumPy**: Enables efficient numerical operations, including handling embeddings.
+- **scikit-learn**: Powers cosine similarity calculations for matching embeddings.
+- **Dash**: A powerful frontend framework used to create an interactive and user-friendly UI.
+
+### Installation
+To use the model, ensure the following library is installed:
+```bash
+pip install -U sentence-transformers
 
 ### Usage
 If you'd like to use the same dataset, you can access it in two ways:
@@ -103,7 +105,6 @@ If you'd like to use the same dataset, you can access it in two ways:
    # Download the dataset
    path = kagglehub.dataset_download("karkavelraja/amazon-sales-dataset")
    print("Path to dataset files:", path)
-
 
 ---
 
