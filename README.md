@@ -62,6 +62,23 @@ Ensure you have the following installed on your system:
 ## Dataset
 The project uses the **Amazon Sales Dataset** from Kaggle. This dataset includes details of 1K+ Amazon products, including their ratings, reviews, and other product-specific information.
 
+### Usage
+If you'd like to use the same dataset, you can access it in two ways:
+
+1. **Download Manually**  
+   Visit the [Kaggle dataset page](https://www.kaggle.com/datasets/karkavelrajaj/amazon-sales-dataset/data), download the dataset as a ZIP file, and extract it to your local directory.
+
+2. **Using Kaggle API**  
+   To automate the process with the Kaggle API:
+   ```python
+   import kagglehub
+   
+   # Download the dataset
+   path = kagglehub.dataset_download("karkavelraja/amazon-sales-dataset")
+   print("Path to dataset files:", path)
+
+---
+
 ## Model
 This system leverages the **all-MiniLM-L6-v2** model from [Hugging Face](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2), a sentence-transformer model designed for semantic similarity tasks. The model maps sentences and paragraphs to a **384-dimensional dense vector space**, making it ideal for clustering, semantic search, and matching user queries to product names.
 
@@ -90,23 +107,6 @@ The system is built using the following tools:
 To use the model, ensure the following library is installed:
 ```bash
 pip install -U sentence-transformers
-
-### Usage
-If you'd like to use the same dataset, you can access it in two ways:
-
-1. **Download Manually**  
-   Visit the [Kaggle dataset page](https://www.kaggle.com/datasets/karkavelrajaj/amazon-sales-dataset/data), download the dataset as a ZIP file, and extract it to your local directory.
-
-2. **Using Kaggle API**  
-   To automate the process with the Kaggle API:
-   ```python
-   import kagglehub
-   
-   # Download the dataset
-   path = kagglehub.dataset_download("karkavelraja/amazon-sales-dataset")
-   print("Path to dataset files:", path)
-
----
 
 ## Technologies Used
 - **Dash**: For building the interactive web application
