@@ -1,25 +1,23 @@
-# Amazon_Recommendation_System
+# Amazon Recommendation System
 
 ## Overview
-The **Amazon Recommendation System** is a web-based application that provides personalized product recommendations based on user input and product data. It integrates product information such as categories, discounts, and pricing trends to enhance the shopping experience.
-
-This system was built using **Dash**, **Plotly**, and other Python libraries to deliver an interactive and user-friendly interface.
+The **Amazon Recommendation System** is a web-based application that delivers personalized product recommendations based on user input and product data. It integrates product categories, discounts, and pricing trends to enhance the shopping experience. The system is built using **Dash**, **Plotly**, and other Python libraries to provide an interactive and user-friendly interface.
 
 ---
 
 ## Features
 - **Category-Based Navigation**: Browse products by category and subcategory.
-- **Top Recommendations**: Displays the most relevant products based on popularity and ratings.
-- **Discount Search**: Search for products with discounts and visualize price trends.
-- **Interactive Charts**: Plot price comparisons and discount trends for better decision-making.
-- **Responsive Design**: Optimized for both desktop and mobile screens.
+- **Top Recommendations**: Displays the most relevant products based on ratings and popularity.
+- **Discount Search**: Find discounted products and visualize pricing trends.
+- **Interactive Charts**: Compare prices and discount trends with graphical insights.
+- **Responsive Design**: Optimized for both desktop and mobile devices.
 
 ---
 
 ## Setup Instructions
 
 ### Prerequisites
-Ensure you have the following installed on your system:
+Ensure you have the following installed:
 - Python 3.8+
 - pip (Python package manager)
 - Git
@@ -34,8 +32,8 @@ Ensure you have the following installed on your system:
 2. Set up a virtual environment:
     ```bash
     python -m venv .venv
-    source .venv/bin/activate  # For macOS/Linux
-    .venv\Scripts\activate     # For Windows
+    source .venv/bin/activate  # macOS/Linux
+    .venv\Scripts\activate     # Windows
     ```
 
 3. Install the required dependencies:
@@ -53,66 +51,54 @@ Ensure you have the following installed on your system:
 ---
 
 ## Usage
-- Use the **categories panel** to explore products by their categories and subcategories.
+- Use the **categories panel** to explore products by categories and subcategories.
 - Enter a keyword in the **search bar** to find discounted products.
-- View detailed product recommendations with interactive visualizations.
+- View interactive visualizations for detailed product insights.
 
 ---
 
 ## Dataset
-The project uses the **Amazon Sales Dataset** from Kaggle. This dataset includes details of 1K+ Amazon products, including their ratings, reviews, and other product-specific information.
+The project uses the **Amazon Sales Dataset** from Kaggle, which includes:
+- Product names
+- Categories
+- Ratings
+- Discount percentages
+- Prices (original and discounted)
 
-### Usage
-If you'd like to use the same dataset, you can access it in two ways:
+### Accessing the Dataset
+1. **Manual Download**: Visit the [Kaggle dataset page](https://www.kaggle.com/datasets/karkavelrajaj/amazon-sales-dataset/data) and download the dataset as a ZIP file.
+2. **Using Kaggle API**:
+    ```python
+    import kagglehub
 
-1. **Download Manually**  
-   Visit the [Kaggle dataset page](https://www.kaggle.com/datasets/karkavelrajaj/amazon-sales-dataset/data), download the dataset as a ZIP file, and extract it to your local directory.
-
-2. **Using Kaggle API**  
-   To automate the process with the Kaggle API:
-   ```python
-   import kagglehub
-   
-   # Download the dataset
-   path = kagglehub.dataset_download("karkavelraja/amazon-sales-dataset")
-   print("Path to dataset files:", path)
+    # Download the dataset
+    path = kagglehub.dataset_download("karkavelrajaj/amazon-sales-dataset")
+    print("Path to dataset files:", path)
+    ```
 
 ---
 
 ## Model
-This system leverages the **all-MiniLM-L6-v2** model from [Hugging Face](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2), a sentence-transformer model designed for semantic similarity tasks. The model maps sentences and paragraphs to a **384-dimensional dense vector space**, making it ideal for clustering, semantic search, and matching user queries to product names.
+This system uses the **all-MiniLM-L6-v2** model from [Hugging Face](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2). It maps product names and queries to a **384-dimensional dense vector space** for tasks like clustering, semantic search, and recommendation.
 
-### Key Features of the Model:
+### Key Features:
 - **Efficient Embedding Generation**: Converts product names and user queries into meaningful embeddings.
-- **Lightweight and Fast**: With **22.7M parameters**, the model is optimized for speed and accuracy.
-- **Cosine Similarity**: Used to compute the relevance between user queries and product names.
+- **Lightweight and Fast**: Optimized for speed and accuracy with only **22.7M parameters**.
+- **Cosine Similarity**: Computes the relevance between user queries and product names.
 
-### How the System Works:
-This system utilizes **Hugging Face Transformers** for embedding generation and **cosine similarity** for matching user queries to relevant products. The recommendation algorithm is designed with the following considerations:
-- **Rating Weight**: A combination of product ratings and rating counts to prioritize highly-rated and popular products.
-- **Category Diversity**: Ensures recommendations are varied and balanced across different product categories.
+### System Optimizations:
+- **Query Matching**: Matches user queries to the most relevant discounted products.
+- **Diverse Recommendations**: Provides balanced recommendations across categories based on ratings and popularity.
 
-### Optimizations:
-- **Query Matching**: Matches user queries to the most relevant discounted products using embeddings and cosine similarity.
-- **Diverse Recommendations**: Selects top-rated products from various categories to provide a balanced set of recommendations.
-
-### Libraries and Frameworks:
-The system is built using the following tools:
-- **Hugging Face Transformers**: Provides state-of-the-art NLP embeddings for product matching.
-- **NumPy**: Enables efficient numerical operations, including handling embeddings.
-- **scikit-learn**: Powers cosine similarity calculations for matching embeddings.
-- **Dash**: A powerful frontend framework used to create an interactive and user-friendly UI.
-
-### Installation
-To use the model, ensure the following library is installed:
-```bash
-pip install -U sentence-transformers
 ---
-## Technologies Used
-- **Dash**: For building the interactive web application
-- **Plotly**: For creating visualizations
-- **Pandas**: For data manipulation
-- **scikit-learn**: For recommendation algorithms
+
+## Libraries and Frameworks
+- **Hugging Face Transformers**: NLP embeddings for product matching.
+- **NumPy**: Efficient numerical operations for embeddings.
+- **scikit-learn**: Cosine similarity for matching embeddings.
+- **Dash**: Interactive web application framework.
+- **Plotly**: For creating engaging visualizations.
+
 ---
 
 ## License
@@ -120,8 +106,8 @@ This project is licensed under the **AGPL-3.0 License**. See the [LICENSE](./LIC
 
 ---
 
-
 ## Author
-Developed by **Zoe Zhuang**  
-For any queries or issues, please contact [Zoe Zhuang](mailto:zz3256@columbia.edu).
+Developed by **Zihui Zhuang**  
+For queries or issues, contact [Zihui Zhuang](mailto:zz3256@columbia.edu).
+
 
